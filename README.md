@@ -38,7 +38,7 @@ Header image retrieved from : pixabay.com by geralt
 
 Help from : [http://www.w3.org/](http://www.w3.org/) and [https://docs.angularjs.org](https://docs.angularjs.org)
 
-List of *APIs* 📂: ![https://github.com/toddmotto/public-apis](https://github.com/toddmotto/public-apis)
+List of APIs 📂 : ![https://github.com/toddmotto/public-apis](https://github.com/toddmotto/public-apis)
 
 ### 4-Build with
 
