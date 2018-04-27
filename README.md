@@ -6,8 +6,6 @@ This project belong to Web Design courses. It attempt to validate the Web Design
   <img width="460" height="300" src="https://cdn.pixabay.com/photo/2016/09/14/08/26/web-1668927_960_720.jpg">
 </p>
 
-[comment]: # (![logo](https://cdn.pixabay.com/photo/2016/09/14/08/26/web-1668927_960_720.jpg))
-
 ## Getting Starting
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. The easiest way to test it is to download all files and to make them run on your local web server.
@@ -37,15 +35,35 @@ Must use :
 ### 3-Bibliography
 
 Header image retrieved from : pixabay.com by geralt
-Help from : [http://www.w3.org/](http://www.w3.org/) & [https://docs.angularjs.org](https://docs.angularjs.org)
-List of *APIs* 📂: ![public apis](https://github.com/toddmotto/public-apis)
+
+Help from : [http://www.w3.org/](http://www.w3.org/) and [https://docs.angularjs.org](https://docs.angularjs.org)
+
+List of *APIs* 📂: ![https://github.com/toddmotto/public-apis](https://github.com/toddmotto/public-apis)
 
 ### 4-Build with
 
-*Bootstrap* : [https://getbootstrap.com/](http://getbootstrap.com/) ![icon Bootstrap](http://themicon.co/theme/centric/v1.9.5/assets/bs4.png)
-*Angular* : [https://angularjs.org/](https://angularjs.org/) ![icon angular](http://adrianmejia.com/images/angularjs.png)
-*Server* : [https://apache.org/](https://apache.org/) ![icon apache](https://docs.openstack.org/murano/newton/_images/logo.png)
-*Editor*: [https://atom.io/](https://atom.io/) ![icon atom](https://i.pinimg.com/originals/64/92/42/6492425f7217725ab8cbe29e3aa8eae6.jpg)
+*Bootstrap* : [https://getbootstrap.com/](http://getbootstrap.com/)
+<p align="left">
+  <img width="42" height="42" src="http://themicon.co/theme/centric/v1.9.5/assets/bs4.png">
+</p>
+
+*Angular* : [https://angularjs.org/](https://angularjs.org/)
+<p align="left">
+  <img width="42" height="42" src="http://adrianmejia.com/images/angularjs.png">
+</p>
+
+*Server* : [https://apache.org/](https://apache.org/)
+<p align="left">
+  <img width="42" height="42" src="https://docs.openstack.org/murano/newton/_images/logo.png">
+</p>
+
+
+*Editor*: [https://atom.io/](https://atom.io/)
+<p align="left">
+  <img width="42" height="42" src="https://i.pinimg.com/originals/64/92/42/6492425f7217725ab8cbe29e3aa8eae6.jpg">
+</p>
+
+
 *Sources JSON*: --
 
 
