@@ -2,6 +2,7 @@
 
 This project belong to Web Design courses. It attempt to validate the Web Design module. 💻
 
+
 <p align="center">
   <img width="460" height="300" src="https://cdn.pixabay.com/photo/2016/09/14/08/26/web-1668927_960_720.jpg">
 </p>
@@ -35,12 +36,11 @@ Must use :
 ### 3-Bibliography
 
 Header image retrieved from : pixabay.com by geralt
-
-Help from : [http://www.w3.org/](http://www.w3.org/) and [https://docs.angularjs.org](https://docs.angularjs.org)
-
+Help from : [https://www.w3.org/](http://www.w3.org/) and [https://docs.angularjs.org](https://docs.angularjs.org)
 List of APIs 📂 : ![https://github.com/toddmotto/public-apis](https://github.com/toddmotto/public-apis)
 
 ### 4-Build with
+
 
 *Bootstrap* : [https://getbootstrap.com/](http://getbootstrap.com/)
 <p align="left">
