@@ -5,7 +5,7 @@
  * @name webDesignApp
  * @description
  * # webDesignApp
- *
+ *gillesddlk@gmail.com
  * Main module of the application.
  */
 angular
@@ -25,3 +25,8 @@ angular
         redirectTo: '/'
       });
   });
+
+  function searchcity() {
+      var txt = document.getElementById("searchcity").elements[0].value;
+      document.getElementById("enteredcity").innerHTML = "La ville que vous avez choisie est : " + txt + ".";
+  }

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="webDesignApp">
+  <body ng-app="webDesignApp" >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -47,6 +47,13 @@
         </div>
       </div>
     </div>
+
+      <form id="searchcity" >
+        City : <input type="text" name="cityname"><br>
+      </form>
+    <button onclick="searchcity()" >Entrer</button>
+
+    <p id="enteredcity"></p>
 
     <div class="container">
     <div ng-view=""></div>
