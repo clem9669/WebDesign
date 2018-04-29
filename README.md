@@ -35,6 +35,10 @@ Must use :
 
 ### 3-Bibliography
 
+Spefical thank to : **Tania Rascia**
+  1. [How to Connect to an API with JavaScript](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/)
+  2. [Google Maps APIs for Multiple Locations](https://www.taniarascia.com/google-maps-apis-for-multiple-locations/)
+
 Header image retrieved from : pixabay.com by geralt
 Help from : [https://www.w3.org/](http://www.w3.org/) and [https://docs.angularjs.org](https://docs.angularjs.org)
 List of APIs 📂 : ![https://github.com/toddmotto/public-apis](https://github.com/toddmotto/public-apis)
