@@ -29,18 +29,20 @@ angular
   });
 
 function searchcity() {
+
   var txt = document.getElementById("searchcity").elements[0].value;
   document.getElementById("enteredcity").innerHTML = "La ville que vous avez choisie est : " + txt + ".";
 
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest();
-  const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q='+txt; //make a search about the city
+  const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q=' + txt; //make a search about the city
   // Open a new connection, using the GET request on the URL endpoint
   request.open('GET', url_gouv, true);
 
   request.onload = function() {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
+
     if (request.status >= 200 && request.status < 400) {
 
       console.log(data.features[0].properties.label);
@@ -52,6 +54,15 @@ function searchcity() {
       var lat = coordinates[0];
       var lng = coordinates[1];
 
+      var mymap = L.map('map').setView([lat, lng], 4);
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q'
+      }).addTo(mymap);
+      var marker = L.marker([lat,lng]).addTo(mymap);
+
 
     } else {
       const errorMessage = document.createElement('marquee');
@@ -60,24 +71,8 @@ function searchcity() {
     }
   };
 
-  // Send request
-  request.send();
-}
-
-//Maps
-var map;
-var uluru = {
-  lat: 47.3220, //getlat
-  lng: 5.0415 //getlng
-};
-
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13, //zoom sur la map
-    center: uluru
-  });
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
+  // var request2 = new XMLHttpRequest();
+  // const url_maps =
+    // Send request
+    request.send();
 }
