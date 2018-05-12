@@ -59,12 +59,23 @@ body {
   margin-top: 28px;
 }
 
+table, th, td
+{
+    border: 1px solid black;
+}
+
+table
+{
+    border-collapse: collapse;
+}
 /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
     #map {
       height: 100%;
     }
-    #mapid { height: 180px; }
+    #map2{
+      height: 100%;
+    }
 
     /* Optional: Makes the sample page fill the window. */
     html, body {

@@ -51,24 +51,65 @@ function searchcity() {
       console.log(data.features[0].properties.type);
       console.log(data.features[0].geometry.coordinates);
       var coordinates = data.features[0].geometry.coordinates;
-      var lat = coordinates[0];
-      var lng = coordinates[1];
+      // var lat = coordinates[0];
+      // var lng = coordinates[1];
 
-      // var mymap = L.map('map').setView([lat, lng], 4);
-      // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q', {
-      //   maxZoom: 18,
-      //   center: [lat,lng],
-      //   id: 'mapbox.streets',
-      //   accessToken: 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q'
-      // }).addTo(mymap);
-    mapboxgl.accessToken ='pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
-    var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-    center: coordinates, // starting position [lng, lat]
-    zoom: 11 // starting zoom
-});
-      // var marker = L.marker([lat,lng]).addTo(mymap);
+      //table
+      var info, text, fLen, i;
+
+      info = [data.features[0].properties.label,data.features[0].properties.context,data.features[0].properties.postcode,data.features[0].properties.type];
+      fLen = info.length;
+      text = "<ul>";
+      for (i = 0; i < fLen; i++) {
+        text += "<li>" + info[i] + "</li>";
+      }
+      text += "</ul>";
+      document.getElementById("table").innerHTML = text;
+
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
+      // Map Street
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+        center: coordinates, // starting position [lng, lat]
+        zoom: 11 // starting zoom
+      });
+
+      //Maps Satelite -- not working 😞
+      // var map2 = new mapboxgl.Maps({
+      //   container: 'map2',
+      //   zoom: 9,
+      //   center: coordinates,
+      //   style: 'mapbox://styles/mapbox/satellite-v9',
+      //   hash: false
+      // });
+
+      // ADD a picture as a Marker -- not working 😞
+      // map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+      //   if (error) throw error;
+      //   map.addImage('cat', image);
+      //   map.addLayer({
+      //     "id": "points",
+      //     "type": "symbol",
+      //     "source": {
+      //       "type": "geojson",
+      //       "data": {
+      //         "type": "FeatureCollection",
+      //         "features": [{
+      //           "type": "Feature",
+      //           "geometry": {
+      //             "type": "Point",
+      //             "coordinates": [0, 0]
+      //           }
+      //         }]
+      //       }
+      //     },
+      //     "layout": {
+      //       "icon-image": "cat",
+      //       "icon-size": 0.25
+      //     }
+      //   });
+      // });
 
 
     } else {
@@ -80,6 +121,6 @@ function searchcity() {
 
   // var request2 = new XMLHttpRequest();
   // const url_maps =
-    // Send request
-    request.send();
+  // Send request
+  request.send();
 }
