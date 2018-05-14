@@ -31,7 +31,7 @@ angular
 function searchcity() {
 
   var txt = document.getElementById("searchcity").elements[0].value;
-  document.getElementById("enteredcity").innerHTML = "La ville que vous avez choisie est : " + txt + ".";
+  document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + ".";
 
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest();
@@ -57,7 +57,7 @@ function searchcity() {
       //table
       var info, text, fLen, i;
 
-      info = [data.features[0].properties.label,data.features[0].properties.context,data.features[0].properties.postcode,data.features[0].properties.type];
+      info = [data.features[0].properties.label, data.features[0].properties.context, data.features[0].properties.postcode, data.features[0].geometry.coordinates];
       fLen = info.length;
       text = "<ul>";
       for (i = 0; i < fLen; i++) {
@@ -69,47 +69,55 @@ function searchcity() {
       mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
       // Map Street
       var map = new mapboxgl.Map({
-        container: 'map', // container id
-        style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
-        center: coordinates, // starting position [lng, lat]
-        zoom: 11 // starting zoom
+        container: 'map',
+        style: 'mapbox://styles/mapbox/basic-v9',
+        zoom: 13,
+        center: coordinates
       });
 
-      //Maps Satelite -- not working 😞
-      // var map2 = new mapboxgl.Maps({
-      //   container: 'map2',
-      //   zoom: 9,
-      //   center: coordinates,
-      //   style: 'mapbox://styles/mapbox/satellite-v9',
-      //   hash: false
-      // });
+// add an image as marker
+      map.on('load', function() {
+        map.loadImage('../images/you-are-here.png', function(error, image) {
+          if (error) throw error;
+          map.addImage('you-are-here', image);
+          map.addLayer({
+            "id": "points",
+            "type": "symbol",
+            "source": {
+              "type": "geojson",
+              "data": {
+                "type": "FeatureCollection",
+                "features": [{
+                  "type": "Feature",
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": coordinates
+                  }
+                }]
+              }
+            },
+            "layout": {
+              "icon-image": "you-are-here",
+              "icon-size": 0.03
+            }
+          });
+        });
+      });
 
-      // ADD a picture as a Marker -- not working 😞
-      // map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
-      //   if (error) throw error;
-      //   map.addImage('cat', image);
-      //   map.addLayer({
-      //     "id": "points",
-      //     "type": "symbol",
-      //     "source": {
-      //       "type": "geojson",
-      //       "data": {
-      //         "type": "FeatureCollection",
-      //         "features": [{
-      //           "type": "Feature",
-      //           "geometry": {
-      //             "type": "Point",
-      //             "coordinates": [0, 0]
-      //           }
-      //         }]
-      //       }
-      //     },
-      //     "layout": {
-      //       "icon-image": "cat",
-      //       "icon-size": 0.25
-      //     }
-      //   });
-      // });
+      var layerList = document.getElementById('menu');
+      var inputs = layerList.getElementsByTagName('input');
+
+      function switchLayer(layer) {
+        var layerId = layer.target.id;
+        map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
+      }
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = switchLayer;
+      }
+
+
+
 
 
     } else {
@@ -119,8 +127,31 @@ function searchcity() {
     }
   };
 
+
   // var request2 = new XMLHttpRequest();
-  // const url_maps =
+  // //const url_weather = 'http://api.airvisual.com/v2/nearest_station?lat=12&lon=3&key=GmFbmJDuZfcyPdxeu';
+  // const url_weather2 = 'http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22';
+  // //const url_wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + txt;
+  // request.open('GET', url_weather2, true);
+  //
+  // request.onload = function2() {
+  //   var data2 = JSON.parse(this.response);
+  //
+  //   if (request2.status >= 200 && request2.status < 400) {
+  //     // $.getJSON("https://en.wikipedia.org/w/api.php?action=query&format=json&gsrlimit=15&generator=search&origin=*&gsrsearch=" + q, function(data){
+  //     console.log(data2.main.temp);
+  //
+  //
+  //   } else {
+  //     const errorMessage = document.createElement('marquee');
+  //     errorMessage.textContent = `Gah, it's not working!`;
+  //     app.appendChild(errorMessage);
+  //   }
+  // };
+
+
+
+
   // Send request
   request.send();
 }

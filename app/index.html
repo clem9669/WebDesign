@@ -20,7 +20,7 @@
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpr9if9Sf_nOVFs_Tvj4RVfv5AUKcgpIA&callback=initMap" type="text/javascript" async defer></script> -->
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body ng-app="webDesignApp">
@@ -56,10 +56,9 @@
     </div>
   </div>
 
-  <form id="searchcity">
-    City : <input type="text" name="cityname"><br>
+  <form id="searchcity"> Ville :
+    <input type="text" name="cityname"> <button onclick="searchcity()">Entrer</button>
   </form>
-  <button onclick="searchcity()">Entrer</button>
 
   <p id="enteredcity"></p>
 
@@ -69,9 +68,24 @@
 
   <div class="" id="wikipedia"> </div>
 
+<span> Select the map mode :</span>
+  <div id='menu'>
+    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+    <label for='basic'>basic</label>
+    <input id='streets' type='radio' name='rtoggle' value='streets'>
+    <label for='streets'>streets</label>
+    <input id='bright' type='radio' name='rtoggle' value='bright'>
+    <label for='bright'>bright</label>
+    <input id='light' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+  </div>
+
   <div class="" id="map"> </div>
 
-  <div class="" id="map2"> </div>
 
   <!--
     <div class="container">
@@ -80,7 +94,7 @@
 
   <div class="footer">
     <div class="container">
-      <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <p><span class="glyphicon glyphicon-heart"></span> Thanks</p>
     </div>
   </div>
 
