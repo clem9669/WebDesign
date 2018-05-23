@@ -9,7 +9,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -23,7 +23,7 @@
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
-<body ng-app="webDesignApp">
+<body ng-app="webDesignApp" ng-controller="villeController">
   <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -56,41 +56,34 @@
     </div>
   </div>
 
-  <form id="searchcity"> Ville :
-    <input type="text" name="cityname"> <button onclick="searchcity()">Entrer</button>
+  <form id="searchcity">
+    <input type="text" placeholder="Insert une ville"> <button onclick="searchcity(); showdiv()">Entrer</button>
   </form>
 
   <p id="enteredcity"></p>
 
-  <div class="" id="root"> </div>
-
   <table id="table" border="1"> </table>
 
-  <div class="" id="wikipedia"> </div>
-
-<span> Select the map mode :</span>
-  <div id='menu'>
-    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
-    <label for='basic'>basic</label>
-    <input id='streets' type='radio' name='rtoggle' value='streets'>
-    <label for='streets'>streets</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
+  <div id="Mapmode">
+    <span> Select the map mode :</span>
+    <div id='menu'>
+      <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+      <label for='basic'>basic</label>
+      <input id='streets' type='radio' name='rtoggle' value='streets'>
+      <label for='streets'>streets</label>
+      <input id='bright' type='radio' name='rtoggle' value='bright'>
+      <label for='bright'>bright</label>
+      <input id='light' type='radio' name='rtoggle' value='light'>
+      <label for='light'>light</label>
+      <input id='dark' type='radio' name='rtoggle' value='dark'>
+      <label for='dark'>dark</label>
+      <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+      <label for='satellite'>satellite</label>
+    </div>
   </div>
 
   <div class="" id="map"> </div>
 
-
-  <!--
-    <div class="container">
-    <div ng-view=""></div>
-    </div> -->
 
   <div class="footer">
     <div class="container">

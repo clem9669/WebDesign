@@ -92,6 +92,10 @@ table {
   font-family: 'Open Sans', sans-serif;
 }
 
+#Mapmode{
+  display: none;
+} 
+
 /* Optional: Makes the sample page fill the window. */
 
 html, body {

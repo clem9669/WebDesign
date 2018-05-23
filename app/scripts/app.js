@@ -28,6 +28,16 @@ angular
       });
   });
 
+function showdiv() {
+  var menumap = document.getElementById("Mapmode"); // display menu map
+  if (menumap.style.display === "none") {
+    menumap.style.display = "block";
+  } else {
+    menumap.style.display = "none";
+  }
+}
+
+
 function searchcity() {
 
   var txt = document.getElementById("searchcity").elements[0].value;
@@ -35,7 +45,7 @@ function searchcity() {
 
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest();
-  const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q=' + txt; //make a search about the city
+  const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q=' + txt; //make a search about the city on gouv API
   // Open a new connection, using the GET request on the URL endpoint
   request.open('GET', url_gouv, true);
 
@@ -45,12 +55,12 @@ function searchcity() {
 
     if (request.status >= 200 && request.status < 400) {
 
-      console.log(data.features[0].properties.label);
-      console.log(data.features[0].properties.context);
-      console.log(data.features[0].properties.postcode);
-      console.log(data.features[0].properties.type);
-      console.log(data.features[0].geometry.coordinates);
       var coordinates = data.features[0].geometry.coordinates;
+      // console.log(data.features[0].properties.label);
+      // console.log(data.features[0].properties.context);
+      // console.log(data.features[0].properties.postcode);
+      // console.log(data.features[0].properties.type);
+      // console.log(data.features[0].geometry.coordinates);
       // var lat = coordinates[0];
       // var lng = coordinates[1];
 
@@ -67,6 +77,7 @@ function searchcity() {
       document.getElementById("table").innerHTML = text;
 
       mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
+
       // Map Street
       var map = new mapboxgl.Map({
         container: 'map',
@@ -75,7 +86,7 @@ function searchcity() {
         center: coordinates
       });
 
-// add an image as marker
+      // add an image as marker
       map.on('load', function() {
         map.loadImage('../images/you-are-here.png', function(error, image) {
           if (error) throw error;
@@ -98,7 +109,7 @@ function searchcity() {
             },
             "layout": {
               "icon-image": "you-are-here",
-              "icon-size": 0.03
+              "icon-size": 0.08
             }
           });
         });
@@ -116,10 +127,6 @@ function searchcity() {
         inputs[i].onclick = switchLayer;
       }
 
-
-
-
-
     } else {
       const errorMessage = document.createElement('marquee');
       errorMessage.textContent = `Gah, it's not working!`;
@@ -130,7 +137,7 @@ function searchcity() {
 
   // var request2 = new XMLHttpRequest();
   // //const url_weather = 'http://api.airvisual.com/v2/nearest_station?lat=12&lon=3&key=GmFbmJDuZfcyPdxeu';
-  // const url_weather2 = 'http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22';
+  // better one === const url_weather2 = 'http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22';
   // //const url_wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + txt;
   // request.open('GET', url_weather2, true);
   //
@@ -148,8 +155,6 @@ function searchcity() {
   //     app.appendChild(errorMessage);
   //   }
   // };
-
-
 
 
   // Send request
