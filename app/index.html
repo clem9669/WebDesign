@@ -18,7 +18,9 @@
 
   <!-- Maps API -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpr9if9Sf_nOVFs_Tvj4RVfv5AUKcgpIA&callback=initMap" type="text/javascript" async defer></script> -->
+  <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
   <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
 </head>
@@ -29,36 +31,17 @@
     <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="header">
-    <div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-          <a class="navbar-brand" href="#/">webDesign</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#/">Home</a></li>
-            <li><a ng-href="#/about">About</a></li>
-            <li><a ng-href="#/">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <div class="">
+    <h1>Où-dont</h1>
   </div>
 
-  <form id="searchcity">
-    <input type="text" placeholder="Insert une ville"> <button onclick="searchcity(); showdiv()">Entrer</button>
-  </form>
+  <div class="bannerimage">
+    <div class="bannertext">
+      <form id="searchcity">
+        <input class="insertlaville" type="text" placeholder="Insert une ville"> <button class="searchButton" onclick="searchcity(); showdiv()">Entrer</button>
+      </form>
+    </div>
+  </div>
 
   <p id="enteredcity"></p>
 
@@ -83,13 +66,6 @@
   </div>
 
   <div class="" id="map"> </div>
-
-
-  <div class="footer">
-    <div class="container">
-      <p><span class="glyphicon glyphicon-heart"></span> Thanks</p>
-    </div>
-  </div>
 
 
   <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>

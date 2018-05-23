@@ -28,6 +28,7 @@ angular
       });
   });
 
+
 function showdiv() {
   var menumap = document.getElementById("Mapmode"); // display menu map
   if (menumap.style.display === "none") {
@@ -41,7 +42,7 @@ function showdiv() {
 function searchcity() {
 
   var txt = document.getElementById("searchcity").elements[0].value;
-  document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + ".";
+  document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + ". Cliquer une seconde fois pour afficher les paramères de la carte." ;
 
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest();
