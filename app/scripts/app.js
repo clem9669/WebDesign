@@ -46,13 +46,13 @@ function capitalizeFirstLetter(string) { //Capitalize the first letter of a stri
 function searchcity() {
   var txt = document.getElementById("searchcity").elements[0].value; // get text from input
   if (txt == "") {
-    alert("City must be filled out");
+    alert("City must be filled out"); // alert to fill in field
     return false;
   }
-  var txt = capitalizeFirstLetter(txt);
+  var txt = capitalizeFirstLetter(txt); // use fct to capitalize
   document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + ".";
   // Create a request variable and assign a new XMLHttpRequest object to it.
-  var request = new XMLHttpRequest();
+  var request = new XMLHttpRequest(); // setup the request
   const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q=' + txt; //make a search about the city on gouv API
   // Open a new connection, using the GET request on the URL endpoint
   request.open('GET', url_gouv, true);
@@ -61,16 +61,14 @@ function searchcity() {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response);
 
-    if (request.status >= 200 && request.status < 400) {
+    if (request.status >= 200 && request.status < 400) { // handle the response from the url
 
       var coordinates = data.features[0].geometry.coordinates;
-      // console.log(data.features[0].properties.label);
-      // console.log(data.features[0].properties.context);
-      // console.log(data.features[0].properties.postcode);
-      // console.log(data.features[0].properties.type);
-      // console.log(data.features[0].geometry.coordinates);
+
       // var lat = coordinates[0];
       // var lng = coordinates[1];
+
+      // document.getElementById("tours").innerHTML = "Voici des précisions sur la ville : "
 
       //table
       var info, text, fLen, i;
@@ -82,7 +80,7 @@ function searchcity() {
         text += "<li>" + info[i] + "</li>";
       }
       text += "</ul>";
-      document.getElementById("table").innerHTML = text;
+      document.getElementById("table").innerHTML = text; // sent responses to table as a list
 
       mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
 
@@ -90,8 +88,8 @@ function searchcity() {
       var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/basic-v9',
-        zoom: 13,
-        center: coordinates
+        zoom: 13, // zoom on the map
+        center: coordinates // according to the previous api !
       });
 
       // add an image as marker
@@ -117,7 +115,7 @@ function searchcity() {
             },
             "layout": {
               "icon-image": "you-are-here",
-              "icon-size": 0.08
+              "icon-size": 0.08 // icon size displayed on map
             }
           });
         });
@@ -126,25 +124,26 @@ function searchcity() {
       var layerList = document.getElementById('menu');
       var inputs = layerList.getElementsByTagName('input');
 
-      function switchLayer(layer) {
+      function switchLayer(layer) { // permit to change layer on map
         var layerId = layer.target.id;
         map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
       }
 
-      for (var i = 0; i < inputs.length; i++) {
+      for (var i = 0; i < inputs.length; i++) { //increment switch layer
         inputs[i].onclick = switchLayer;
       }
 
     } else {
-      const errorMessage = document.createElement('marquee');
+      const errorMessage = document.createElement('marquee'); // if api response =! 200 then display errorMessage
       errorMessage.textContent = `Gah, it's not working!`;
       app.appendChild(errorMessage);
     }
   };
 
 
+  // The following section was a draft for retrieving the weather data about the pointed localisation by api and a short description about the entered city.
+
   // var request2 = new XMLHttpRequest();
-  // //const url_weather = 'http://api.airvisual.com/v2/nearest_station?lat=12&lon=3&key=GmFbmJDuZfcyPdxeu';
   // better one === const url_weather2 = 'http://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22';
   // //const url_wiki = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + txt;
   // request.open('GET', url_weather2, true);

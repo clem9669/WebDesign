@@ -91,14 +91,13 @@ H1 {
 /* Supporting marketing content */
 
 table, th, td {
-  border: 1px solid black;
   margin: 25px;
-  background-color: rgb(240, 240, 240);
   font-size: 14px;
 }
 
-table {
-  border-collapse: collapse;
+#table {
+  border: 1.4rem solid;
+  margin: 2.1rem;
 }
 
 /* Always set the map height explicitly to define the size of the div

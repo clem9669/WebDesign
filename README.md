@@ -18,20 +18,14 @@ The purpose of this project is to create a complete application to access a data
 
 Criteria: ✅
 
-* Use of AngularJS
 * Style & Design
 * Responsiveness
+* Use of AngularJS
 
 ### 2-Schema
 
 Your application should use external data (at least one) retrieved from one or more webservice (s). The JSON format is preferred, the goal is to create an application highlighting these data by displaying them on a site with a specific theme. Your application should also contain a custom filter.
 
-Must use :
-* ng-model
-* ng-if, ng-show
-* ng-repeat
-* ng-class
-* ng-click, ng-submit
 
 ### 3-Bibliography
 
@@ -46,9 +40,34 @@ List of APIs 📂 : ![https://github.com/toddmotto/public-apis](https://github.c
 ### 4-Build with
 
 
-*Bootstrap* : [https://getbootstrap.com/](http://getbootstrap.com/)
+*Bootstrap* : [https://getbootstrap.com/](http://getbootstrap.com/) --not used but could be easily handle
 <p align="left">
   <img width="42" height="42" src="http://themicon.co/theme/centric/v1.9.5/assets/bs4.png">
+</p>
+
+*W3S* : [https://w3schools.com](https://www.w3schools.com)
+<p align="left">
+  <img width="42" height="42" src="http://userlogos.org/files/logos/Rog/w3schools.com_03.png">
+</p>
+
+*Yeoman* : [http://yeoman.io/](http://yeoman.io)
+<p align="left">
+  <img width="42" height="42" src="https://electronjs.org/node_modules/electron-apps/apps/yeoman/yeoman-icon-128.png">
+</p>
+
+*Grunt* : [https://gruntjs.com/](https://gruntjs.com/)
+<p align="left">
+  <img width="42" height="42" src="https://pbs.twimg.com/profile_images/2563508262/falgg2jybmhgk16y62lr.png">
+</p>
+
+*Bower* : [https://bower.io/](https://bower.io)
+<p align="left">
+  <img width="42" height="42" src="https://bower.io/img/bower-logo.png">
+</p>
+
+*Editor*: [https://atom.io/](https://atom.io/)
+<p align="left">
+  <img width="42" height="42" src="https://i.pinimg.com/originals/64/92/42/6492425f7217725ab8cbe29e3aa8eae6.jpg">
 </p>
 
 *Angular* : [https://angularjs.org/](https://angularjs.org/)
@@ -56,19 +75,13 @@ List of APIs 📂 : ![https://github.com/toddmotto/public-apis](https://github.c
   <img width="42" height="42" src="http://adrianmejia.com/images/angularjs.png">
 </p>
 
-*Server* : [https://apache.org/](https://apache.org/)
-<p align="left">
-  <img width="42" height="42" src="https://docs.openstack.org/murano/newton/_images/logo.png">
-</p>
 
 
-*Editor*: [https://atom.io/](https://atom.io/)
-<p align="left">
-  <img width="42" height="42" src="https://i.pinimg.com/originals/64/92/42/6492425f7217725ab8cbe29e3aa8eae6.jpg">
-</p>
+*Sources JSON*:
 
-
-*Sources JSON*: --
+1. [Mapbox](https://www.mapbox.com/mapbox.js/api/v3.1.1/)
+2. [Adresse Gouv API](https://adresse.data.gouv.fr/api)
+3. [OpenWeatherMap](https://openweathermap.org/api)
 
 
 ### 5-Authors 👨‍💻
