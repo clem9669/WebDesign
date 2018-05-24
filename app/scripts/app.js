@@ -38,11 +38,19 @@ function showdiv() {
   }
 }
 
+function capitalizeFirstLetter(string) { //Capitalize the first letter of a string
+  //  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string[0].toUpperCase() + string.slice(1);
+}
 
 function searchcity() {
-
-  var txt = document.getElementById("searchcity").elements[0].value;
-  document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + "." ;
+  var txt = document.getElementById("searchcity").elements[0].value; // get text from input
+  if (txt == "") {
+    alert("City must be filled out");
+    return false;
+  }
+  var txt = capitalizeFirstLetter(txt);
+  document.getElementById("enteredcity").innerHTML = " La ville que vous avez choisie est : " + txt + ".";
   // Create a request variable and assign a new XMLHttpRequest object to it.
   var request = new XMLHttpRequest();
   const url_gouv = 'https://api-adresse.data.gouv.fr/search/?q=' + txt; //make a search about the city on gouv API
@@ -159,4 +167,5 @@ function searchcity() {
 
   // Send request
   request.send();
+
 }
