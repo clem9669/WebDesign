@@ -82,7 +82,7 @@ function searchcity() {
       text += "</ul>";
       document.getElementById("table").innerHTML = text; // sent responses to table as a list
 
-      mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbTk2NjYiLCJhIjoiY2poMjRnYTNhMDlkMTJ3cDN0MGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
+      mapboxgl.accessToken = 'pk.XXXXXXXXXXXXXXXXXXXXXXXXXXXMGNwMnE5NCJ9.pwmUJzWhrwdvFHpe3tk40Q';
 
       // Map Street
       var map = new mapboxgl.Map({
